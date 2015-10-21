@@ -21,16 +21,20 @@ def binSearch(inArr, key, leftBound, rightBound):
 		return -1
 	elif leftBound < rightBound:
 
-		midP 	= (rightBound - leftBound) / 2
-		print "mid point: %d " % midP 
+		midP 	= leftBound + ((rightBound - leftBound) / 2)
 		value 	= inArr[midP]
+		print "mid point: %d " % midP 
 
 		if (key <= value):
 			print "Por la izquierda"
+			print "Right point: %d" % rightBound
+			# position = binSearch(inArr, key, midP + 1, rightBound)
 			position = binSearch(inArr, key, leftBound, midP)
 		else:
 			print "Por la derecha"
-			# position = binSearch(inArr, key, midP + 1, rightBound)
+			print "Mid point: %d" % midP
+			print "Right point: %d " % rightBound
+			position = binSearch(inArr, key, midP + 1, rightBound)
 
 	return position
 	
@@ -39,7 +43,7 @@ array1 = [ 1, 2, 3 ]
 array2 = [ 1, 2, 3, 4, 5, 6 ]
 array3 = [ 1, 2, 3 ]
 
-position  = binSearch(array2, 4, 0, len(array2)-1)
+position  = binSearch(array2, 6, 0, len(array2)-1)
 
 if (position == -1):
 	print "Not found"
