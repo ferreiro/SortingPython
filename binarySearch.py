@@ -5,13 +5,13 @@
 # recursion in this language (cause I used to make recursion on c++)
 # So that's the result :P.
 
-""" BinSearch function: given an array, a key to find and the
-	left and right array bounds. The function will search recursively
-	if the key is on the array. If it's, then returns the position
-	In other case, return -1. 
+""" 	BinSearch: given an array, a key to find and the
+	left and right array bounds this function will search recursively
+	if the key is on the array or not. If it's, then returns the position
+	of the element in the inputted array. In other cases, returns -1. 
 
-	BinSearch has a cost of O(log n). Because in each iteration
-	we're reducing the size of the array by 2. """
+	BinSearch has a cost of O(log n). Because in each recursive call the problem's
+	size is reducing by by 2. """
 
 def binSearch(arr, key, left, right):
 	position = -1
